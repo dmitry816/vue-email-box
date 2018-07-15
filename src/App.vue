@@ -1,8 +1,19 @@
 <template>
 	<div id="app">
-		<div class="container">
-			<app-email-list></app-email-list>
-			<app-sidebar></app-sidebar>
+		<div class="container container-fluid">
+			<div class="app-sidebar">
+				<div>
+					<button type="button" class="btn btn-default" @click="component = 'app-create-email'">create</button>
+				</div>
+				<div>
+					<button type="button" class="btn btn-default" @click="component = 'app-email-list'">sent</button>
+				</div>
+			</div>
+			<div class="content">
+				<keep-alive>
+					<component :is="component"></component>
+				</keep-alive>
+			</div>
 		</div>
 	</div>
 </template>
@@ -10,36 +21,21 @@
 <script>
 
 	import EmailList from './components/EmailList.vue';
-	import Sidebar from './components/Sidebar.vue';
+	import CreateEmail from './components/CreateEmail.vue';
+	import Message from './components/Message.vue';
+	import { eventBus } from './main';
 
 	export default {
 		name: 'app',
-		components: {
-			'app-email-list': EmailList,
-			'app-sidebar': Sidebar,
-		},
 		data() {
 			return {
-
+				component: 'app-email-list'
 			}
 		},
-		created() {
-
-		}
+		components: {
+			'app-create-email': CreateEmail,
+			'app-email-list': EmailList,
+			'app-message': Message,
+		},
 	}
 </script>
-
-<!--<style>
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #0c0c0c;
-		margin-top: 60px;
-		background: rgb(168, 224, 201);
-		border-style: dotted 3px;
-		border: 6px
-	}
-</style>
--->

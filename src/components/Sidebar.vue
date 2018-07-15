@@ -1,28 +1,23 @@
 <template>
-	<aside class="sidebar">
-		<div class="left-side">
-			<div class="create-email">
-				<create-email></create-email>
-			</div>
-			<div class="sent">
-				<sent></sent>
-			</div>
+	<div class="sidebar">
+		<div>
+			<button class="btn btn-compose">
+				<a href="#" @click="createEmail('create-email')">Создать</a>
+			</button>
 		</div>
-		<ul class="sidebar-nav">
-			<li>
-				<a href="#">Compose</a>
-			</li>
-			<li>
-				<a href="#">Sent</a>
-			</li>
-		</ul>
-	</aside>
+		<div>
+			<button class="btn btn-sent">
+				<a href="#" @click="showList('email-list')">Отправленные</a>
+			</button>
+		</div>
+	</div>
 </template>
 
 <script>
-	// TODO rename
+
 	import CreateEmail from './CreateEmail.vue';
-	import Sent from './Sent.vue';
+	import EmailList from './EmailList.vue';
+	import { eventBus } from '../main';
 
 	export default {
 		name: 'Sidebar',
@@ -31,9 +26,21 @@
 
 			}
 		},
+		computed: {
+			createEmail: function(component) {
+				eventBus.$emit('createEmail', {
+					component: CreateEmail
+				})
+			},
+			showList: function(component) {
+				eventBus.$emit('showSentList', {
+					component: EmailList
+				})
+			}
+		},
 		components: {
 			'create-email': CreateEmail,
-			'sent': Sent,
+			'email-list': EmailList
 		}
 	}
 </script>

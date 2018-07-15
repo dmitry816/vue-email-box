@@ -13,43 +13,22 @@
       "content": "long text message long text message long text message long text message "
     },
     {
-      "id": 3,
-      "email": "example@email.com",
-      "subject": "json-server",
-      "content": "long text message long text message long text message long text message "
+      "email": "username@mail.com",
+      "subject": "subject",
+      "content": "test test test test test test test test ",
+      "id": 3
     },
     {
-      "id": 4,
-      "email": "example@email.com",
-      "subject": "json-server",
-      "content": "long text message long text message long text message long text message "
+      "email": "asdfasdfasdf",
+      "subject": "sdfdfdfsadf",
+      "content": "sadfsdf",
+      "id": 4
     },
     {
-      "id": 5,
-      "email": "example@email.com",
-      "subject": "json-server",
-      "content": "long text message long text message long text message long text message "
-    },
-    {
-      "id": 6,
-      "email": "example@email.com",
-      "subject": "json-server",
-      "content": "long text message long text message long text message long text message "
-    },
-    {
-      "title": "asdf",
-      "body": "asdfasdf",
-      "id": 7
-    },
-    {
-      "title": "asdf",
-      "body": "asdfasdf",
-      "id": 8
-    },
-    {
-      "title": "asdf",
-      "body": "asdfasdf",
-      "id": 9
+      "email": "dsghdfhg",
+      "subject": "dfghdfgh",
+      "content": "dfghdfgh",
+      "id": 5
     }
   ]
 }

@@ -1,24 +1,24 @@
 <template>
 	<div id="create-email">
-		<form>
+		<form id="email-form">
 			<div class="create-email-header">
 				<div class="form">
-					<span>From</span>
+					<label>From: username@mail.com</label>
 				</div>
 				<div class="email">
 					<label>Email </label>
-					<input type="email" v-model="message.email">
+					<input type="email" v-model="message.email" required>
 				</div>
 				<div class="subject">
 					<label>Subject </label>
 					<input type="text" v-model="message.subject">
 				</div>
 			</div>
-			<div>
-				<textarea v-model="message.content" rows="30" cols="90"></textarea>
+			<div id="textarea">
+				<textarea v-model="message.content" rows="30" cols="90" required></textarea>
 			</div>
 			<div class="create-email-footer">
-				<button v-on:click.prevent="post">Send</button>
+				<button class="btn btn-default" v-on:click.prevent="post">Send</button>
 			</div>
 		</form>
 	</div>
@@ -39,11 +39,11 @@
 		methods: {
 			post: function() {
 				this.$http.post('http://localhost:3000/messages', {
-					title: this.message.subject,
-					body: this.message.content,
+					email: this.message.email,
+					subject: this.message.subject,
+					content: this.message.content,
 				})
 				.then(function(data){
-
 				})
 			}
 		}

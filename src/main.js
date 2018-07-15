@@ -3,8 +3,10 @@ import App from './App.vue'
 import VueResource from 'vue-resource';
 
 Vue.use(VueResource);
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App)
 }).$mount('#app')
+
+export const eventBus = new Vue();
