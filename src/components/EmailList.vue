@@ -1,15 +1,22 @@
 <template>
-	<div class="email-list">
-		<div class="">
+	<div class="">
+		<div>
 			<table v-if="messages.length > 0" class="table table-hover">
 				<tbody>
-					<tr v-for="message in messages" :key="message.id" @click="openMessage(message)">
+					<th>subject</th>
+					<th>email</th>
+					<tr v-for="message in messages" :key="message.id" v-on:click="selectedMail = message">
 						<td>{{message.subject}}</td>
 						<td>{{message.email}}</td>
 					</tr>
 				</tbody>
 			</table>
-			<p v-else>No messages yet.</p>
+			<!-- <p v-else >No messages yet.</p> -->
+		</div>
+
+		<div v-if="selectedMail">
+			<h4><strong>mail body</strong></h4>
+			<p>{{selectedMail.content}}</p>
 		</div>
 	</div>
 </template>
@@ -20,11 +27,13 @@
 	import { eventBus } from '../main';
 
 	export default {
-		name: 'EmailList',
-		props: {
-			messages: {
-				type: Array,
-				required: true
+		data() {
+			return {
+				messages: {
+					type: Array,
+					required: true
+				},
+				selectedMail: null
 			}
 		},
 		created() {
@@ -32,18 +41,6 @@
 			.then(function(data) {
 				this.messages = data.body;
 			})
-		},
-		methods: {
-			openMessage(message) {
-				eventBus.$emit('itemSelected', {
-					data: {
-						message: item
-					}
-				});
-			}
-		},
-		components: {
-			'message': Message,
 		},
 	}
 </script>

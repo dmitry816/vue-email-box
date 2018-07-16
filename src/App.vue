@@ -1,7 +1,7 @@
 <template>
-	<div id="app">
-		<div class="container container-fluid">
-			<div class="app-sidebar">
+	<div class="container">
+		<div >
+			<div>
 				<div>
 					<button type="button" class="btn btn-default" @click="component = 'app-create-email'">create</button>
 				</div>
@@ -9,7 +9,7 @@
 					<button type="button" class="btn btn-default" @click="component = 'app-email-list'">sent</button>
 				</div>
 			</div>
-			<div class="content">
+			<div >
 				<keep-alive>
 					<component :is="component"></component>
 				</keep-alive>
@@ -26,10 +26,9 @@
 	import { eventBus } from './main';
 
 	export default {
-		name: 'app',
 		data() {
 			return {
-				component: 'app-email-list'
+				component: 'app-email-list',
 			}
 		},
 		components: {

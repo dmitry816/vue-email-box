@@ -14,5 +14,8 @@
 	flex-flow: space-evenly;
 }
 .app-sidebar {
-	padding: 20px;
+
+}
+.message {
+	background: #E4E7EF;
 }
