@@ -1,21 +1,43 @@
-.container {
+.mail-container {
 	display: flex;
 	flex-flow: space-evenly;
 	margin: 20px 100px 20px 60px;
-	border: 1px solid #d3d3d3;
 }
-.email-list-table  {
-	border: 1px solid #d3d3d3;
-	margin-bottom: 0;
-	width: 200%;
+.content-list {
+	max-width: 100%;
 }
 .create-email {
 	display: flex;
 	flex-flow: space-evenly;
 }
-.app-sidebar {
-
+.create-email-form {
+	padding-left: 20px;
 }
-.message {
-	background: #E4E7EF;
+.mail-body {
+	padding-left: 20px;
+	width: 60%;
+}
+.bottom-padding {
+	padding-bottom: 15px;
+}
+.sidebar {
+	padding: 20px;
+	background: #F5F5F5;
+}
+.btn-pozition {
+	padding: 5px;
+	width: 150px;
+}
+.empty-list {
+	position: relative;
+	top: 50px;
+	left: 150px;
+}
+.email-list {
+	width: 60%;
+	max-height: 700px;
+	margin-bottom: 20px;
+	overflow:scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
 }

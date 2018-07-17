@@ -1,19 +1,23 @@
 <template>
-	<div class="container">
-		<div >
-			<div>
-				<div>
-					<button type="button" class="btn btn-default" @click="component = 'app-create-email'">create</button>
-				</div>
-				<div>
-					<button type="button" class="btn btn-default" @click="component = 'app-email-list'">sent</button>
-				</div>
+	<div class="container mail-container">
+		<aside class="sidebar">
+			<div class="btn-pozition">
+				<a href="#" type="button" class="btn btn-default btn-pozition"
+					@click="component = 'app-create-email'">
+					Create
+				</a>
 			</div>
-			<div >
-				<keep-alive>
-					<component :is="component"></component>
-				</keep-alive>
+			<div class="btn-pozition">
+				<a href="#" type="button" class="btn btn-default btn-pozition"
+					@click="component = 'app-email-list'">
+					Sent
+				</a>
 			</div>
+		</aside>
+		<div class="">
+			<keep-alive>
+				<component :is="component"></component>
+			</keep-alive>
 		</div>
 	</div>
 </template>
@@ -22,8 +26,6 @@
 
 	import EmailList from './components/EmailList.vue';
 	import CreateEmail from './components/CreateEmail.vue';
-	import Message from './components/Message.vue';
-	import { eventBus } from './main';
 
 	export default {
 		data() {
@@ -34,7 +36,6 @@
 		components: {
 			'app-create-email': CreateEmail,
 			'app-email-list': EmailList,
-			'app-message': Message,
 		},
 	}
 </script>

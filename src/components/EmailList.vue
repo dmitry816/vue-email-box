@@ -1,30 +1,32 @@
 <template>
-	<div class="">
-		<div>
-			<table v-if="messages.length > 0" class="table table-hover">
-				<tbody>
-					<th>subject</th>
-					<th>email</th>
-					<tr v-for="message in messages" :key="message.id" v-on:click="selectedMail = message">
-						<td>{{message.subject}}</td>
-						<td>{{message.email}}</td>
-					</tr>
-				</tbody>
-			</table>
-			<!-- <p v-else >No messages yet.</p> -->
+	<div class="content-list">
+		<div class="container container-fluid">
+			<div class="email-list">
+				<table v-if="messages.length > 0" class="table table-hover">
+					<tbody>
+						<tr v-for="message in messages" :key="message.id" @click="selectedMail = message">
+							<td>{{message.subject}}</td>
+							<td>{{message.email}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="empty-list" v-else>No messages yet.</p>
+			</div>
 		</div>
-
-		<div v-if="selectedMail">
-			<h4><strong>mail body</strong></h4>
+		<div class="mail-body" v-if="selectedMail">
+			<hr>
+			<p><strong>To: {{selectedMail.email}}</strong>
+			<p><strong>{{selectedMail.subject}}</strong></p>
 			<p>{{selectedMail.content}}</p>
+			<button class="btn btn-default btn-pozition"
+				@click.prevent="deleteSelectedMail">
+				Delete email
+			</button>
 		</div>
 	</div>
 </template>
 
 <script>
-
-	import Message from './Message.vue';
-	import { eventBus } from '../main';
 
 	export default {
 		data() {
@@ -42,5 +44,10 @@
 				this.messages = data.body;
 			})
 		},
+		methods: {
+			deleteSelectedMail: function() {
+				this.$http.delete('http://localhost:3000/messages/'+ this.selectedMail.id)
+			}
+		}
 	}
 </script>
