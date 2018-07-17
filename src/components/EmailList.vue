@@ -18,7 +18,7 @@
 			<p><strong>To: {{selectedMail.email}}</strong>
 			<p><strong>{{selectedMail.subject}}</strong></p>
 			<p>{{selectedMail.content}}</p>
-			<button class="btn btn-default btn-pozition"
+			<button class="btn btn-default btn-position"
 				@click.prevent="deleteSelectedMail">
 				Delete email
 			</button>

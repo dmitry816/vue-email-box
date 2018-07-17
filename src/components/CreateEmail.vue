@@ -16,7 +16,7 @@
 				<textarea class="form-control" v-model="message.content" rows="20" cols="90" required></textarea>
 			</div>
 			<div>
-				<button class="btn btn-default btn-pozition"
+				<button class="btn btn-default btn-position"
 					@click.prevent="post">
 					Send email
 				</button>

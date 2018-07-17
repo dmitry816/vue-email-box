@@ -1,14 +1,14 @@
 <template>
 	<div class="container mail-container">
 		<aside class="sidebar">
-			<div class="btn-pozition">
-				<a href="#" type="button" class="btn btn-default btn-pozition"
+			<div class="btn-position">
+				<a href="#" type="button" class="btn btn-default btn-position"
 					@click="component = 'app-create-email'">
 					Create
 				</a>
 			</div>
-			<div class="btn-pozition">
-				<a href="#" type="button" class="btn btn-default btn-pozition"
+			<div class="btn-position">
+				<a href="#" type="button" class="btn btn-default btn-position"
 					@click="component = 'app-email-list'">
 					Sent
 				</a>
