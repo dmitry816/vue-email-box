@@ -1,8 +1,8 @@
 <template>
-	<div class="container mail-container">
-		<div>
+	<div class="mail-container">
+		<aside class="sidebar">
 			<app-sidebar></app-sidebar>
-		</div>
+		</aside>
 		<div>
 			<router-view></router-view>
 		</div>
@@ -14,7 +14,6 @@
 	import Email from './components/Email.vue';
 	import EmailList from './components/EmailList.vue';
 	import CreateEmail from './components/CreateEmail.vue';
-	import Router from './main';
 	import Sidebar from './components/Sidebar.vue';
 
 	export default {
