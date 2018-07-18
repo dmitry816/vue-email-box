@@ -1,31 +1,21 @@
 <template>
 	<div class="container mail-container">
-		<aside class="sidebar">
-			<div class="btn-position">
-				<a href="#" type="button" class="btn btn-default btn-position"
-					@click="component = 'app-create-email'">
-					Create
-				</a>
-			</div>
-			<div class="btn-position">
-				<a href="#" type="button" class="btn btn-default btn-position"
-					@click="component = 'app-email-list'">
-					Sent
-				</a>
-			</div>
-		</aside>
-		<div class="">
-			<keep-alive>
-				<component :is="component"></component>
-			</keep-alive>
+		<div>
+			<app-sidebar></app-sidebar>
+		</div>
+		<div>
+			<router-view></router-view>
 		</div>
 	</div>
 </template>
 
 <script>
 
+	import Email from './components/Email.vue';
 	import EmailList from './components/EmailList.vue';
 	import CreateEmail from './components/CreateEmail.vue';
+	import Router from './main';
+	import Sidebar from './components/Sidebar.vue';
 
 	export default {
 		data() {
@@ -36,6 +26,8 @@
 		components: {
 			'app-create-email': CreateEmail,
 			'app-email-list': EmailList,
-		},
+			'app-email': Email,
+			'app-sidebar': Sidebar,
+		}
 	}
 </script>
