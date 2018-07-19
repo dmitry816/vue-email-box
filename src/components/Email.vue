@@ -31,7 +31,7 @@ export default {
 		}
 	},
 	created() {
-		this.$http.get( 'http://localhost:3000/messages/'+ this.id)
+		this.$http.get('http://localhost:3000/messages/'+ this.id)
 		.then(function(data) {
 			this.message = data.body;
 		})
