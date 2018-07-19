@@ -4,11 +4,9 @@
 		<p><strong>{{message.subject}}</strong></p>
 		<p>{{message.content}}</p>
 		<div class="button-group">
-			<div @click.prevent="deleteSelectedMail">
-				<router-link to="/" class="btn btn-default btn-position">
-					Delete email
-				</router-link>
-			</div>
+			<button @click.prevent="deleteSelectedMail" class="btn btn-default btn-position">
+				Delete email
+			</button>
 			<div class="second-btn">
 				<router-link to="/" exact class="btn btn-default btn-position">
 					Go back
@@ -37,8 +35,9 @@ export default {
 		})
 	},
 	methods: {
-		deleteSelectedMail: function() {
-			this.$http.delete('http://localhost:3000/messages/'+ this.id)
+		deleteSelectedMail: async function() {
+			await this.$http.delete('http://localhost:3000/messages/'+ this.id);
+			this.$router.push({path: '/'});
 		},
 	}
 }
