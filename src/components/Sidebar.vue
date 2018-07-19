@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<aside class="sidebar">
+		<aside>
 			<div class="btn-position">
 				<router-link to="/compose" exact class="btn btn-default btn-position">Compose</router-link>
 			</div>

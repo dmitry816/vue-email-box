@@ -4,10 +4,10 @@
 			<div class="email-list">
 				<table v-if="messages.length > 0" class="table table-hover">
 					<tbody>
-						<tr v-for="message in messages" :key="message.id">
-							<router-link v-bind:to="'/email/' + message.id">
-								<td>{{message.subject}}</td>
-								<td>{{message.email}}</td>
+						<tr v-for="message in messages" :key="message.id" class="tr">
+							<router-link v-bind:to="'/email/' + message.id" class="email-link">
+								<td class="td">{{message.subject}}</td>
+								<td class="td">{{message.email}}</td>
 							</router-link>
 						</tr>
 					</tbody>

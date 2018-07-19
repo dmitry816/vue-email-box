@@ -1,6 +1,6 @@
 <template>
 	<div class="container mail-container">
-		<div>
+		<div class="sidebar">
 			<app-sidebar></app-sidebar>
 		</div>
 		<div>

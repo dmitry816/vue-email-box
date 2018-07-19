@@ -41,3 +41,21 @@
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 }
+.td {
+    width: 80%;
+    padding: 10px;
+	border-bottom: 1px solid #ddd;
+	color:#575d5c
+}
+.email-link:hover {
+	text-decoration: none;
+}
+.email-list:visited {
+    background-color: cyan;
+}
+.button-group {
+	display: flex;
+}
+.second-btn {
+	padding-left: 10px;
+}

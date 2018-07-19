@@ -3,15 +3,17 @@
 		<p><strong>To: {{message.email}}</strong>
 		<p><strong>{{message.subject}}</strong></p>
 		<p>{{message.content}}</p>
-		<div @click.prevent="deleteSelectedMail">
-			<router-link to="/" class="btn btn-default btn-position" >
-				Delete email
-			</router-link>
-		</div>
-		<div>
-			<router-link to="/" exact class="btn btn-default btn-position">
-				Go back
-			</router-link>
+		<div class="button-group">
+			<div @click.prevent="deleteSelectedMail">
+				<router-link to="/" class="btn btn-default btn-position">
+					Delete email
+				</router-link>
+			</div>
+			<div class="second-btn">
+				<router-link to="/" exact class="btn btn-default btn-position">
+					Go back
+				</router-link>
+			</div>
 		</div>
 	</div>
 </template>
